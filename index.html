@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="download.png">
-
     <style>
         * {
             margin: 0;
@@ -40,8 +39,8 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 0;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: 0.3s;
@@ -51,13 +50,13 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             color: var(--light-color);
             text-decoration: none;
             font-weight: 500;
-            position: relative;
             transition: 0.3s;
         }
 
@@ -73,10 +72,11 @@
             justify-content: center;
             text-align: center;
             background: url('https://source.unsplash.com/1600x900/?technology,developer') no-repeat center/cover;
+            padding: 2rem;
         }
 
         .hero h1 {
-            font-size: 5rem;
+            font-size: 4rem;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -89,13 +89,13 @@
 
         /* Projects Section */
         .projects {
-            padding: 5rem 0;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -103,18 +103,23 @@
         .project-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            padding: 1.5rem;
+            padding: 2rem;
+            text-align: center;
             transition: 0.4s;
             cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
         }
 
         .project-card:hover {
             transform: scale(1.05);
+            border-color: var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.3);
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 0;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
@@ -134,57 +139,30 @@
             color: var(--secondary-color);
             transform: scale(1.2);
         }
-        .project-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    transition: 0.4s;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid transparent;
-}
 
-.project-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: var(--light-color);
-}
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
 
-.project-card p {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-/* Hover Effects */
-.project-card:hover {
-    transform: scale(1.05);
-    border-color: var(--secondary-color);
-    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.3);
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-    transition: 0.5s;
-}
-
-.project-card:hover::before {
-    top: 0;
-    left: 0;
-}
-a{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -206,16 +184,16 @@ a{
     </section>
 
     <section id="projects" class="projects">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="container">
             <h2>Featured Projects</h2>
             <div class="project-grid">
                 <a href="https://github.com/MuhammadUmarAbbas2011/ShopMart/">
-                <div class="project-card">
-                    <h3>ShopMart</h3>
-                    <p>Beautiful web application And Cool Backend</p>
-                    </a>
-                </div>
-                
+                    <div class="project-card">
+                        <h3>ShopMart</h3>
+                        <p>Beautiful web application And Cool Backend</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -225,7 +203,7 @@ a{
             <div class="social-links">
                 <a href="https://github.com/MuhammadUmarAbbas2011/" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/muhammad-umar-abbas-03583134a/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://mailto:muhammadumarabbas2011@gmail.com" class="social-link"><i class="far fa-envelope"></i></a>
+                <a href="mailto:muhammadumarabbas2011@gmail.com" class="social-link"><i class="far fa-envelope"></i></a>
             </div>
         </div>
     </section>
